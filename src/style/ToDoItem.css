@@ -1,0 +1,8 @@
+.Item {
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    width: 90%;
+    margin: 15px auto;
+    padding: 5px;
+}
