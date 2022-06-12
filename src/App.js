@@ -1,6 +1,6 @@
-import './style/App.css';
 import {useState} from 'react';
 import ToDoList from './components/ToDoList';
+import MyHeader from './components/MyHeader';
 
 function App() {
   const [newTodo, setNewTodo] = useState({
@@ -12,7 +12,7 @@ function App() {
     {id: 2, text: 'Сходить в душ', isDone: true}
   ])
 
-  const addTodo = () => {
+  const addTodo = (e) => {
     if (newTodo.text) {
       setAllTodos([...allTodos, newTodo])
       setNewTodo({
@@ -26,21 +26,9 @@ function App() {
   }
 
   return (
-    <div>
-      <header>
-        <h3>ToDo App by VagSer</h3>
-        <input
-          placeholder='Введите дело'
-          value={newTodo.text}
-          onChange={(e) => {setNewTodo({...newTodo, text: e.target.value})}}
-        />
-        <button
-          onClick={addTodo}
-        >
-          Добавить
-        </button>
-      </header>
-      <ToDoList title='Список дел' todos={allTodos} removeTodo={removeTodo}/>
+    <div className='App'>
+      <MyHeader newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo}/>
+      <ToDoList title={allTodos.length? 'Список дел' : 'Дел нет'} todos={allTodos} removeTodo={removeTodo}/>
     </div>
   );
 }

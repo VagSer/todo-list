@@ -1,0 +1,9 @@
+.MyHeader {
+    display: flex;
+    color: white;
+    background-color: darkblue;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
