@@ -33,24 +33,25 @@ function App() {
   }
 
   const removeTodo = (value) => {
-    setAllTodos(allTodos.filter(todo => todo.id !== value.id))
+    setAppendedTodos(allTodos.filter(todo => todo.id !== value.id))
+    setAllTodos(appendedTodos)
   }
 
   return (
     <div className='App'>
-      <MyHeader newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo}/>
-        <div style={{display:'flex'}}>
-        <h4>Показать</h4>
-        <select 
-          value={whatShow}
-          onChange={(e) => showTodos(e)}
-        >
-            <option value="all">Все</option>
-            <option value="done">Сделанные</option>
-            <option value="undone">Несделанные</option>
-        </select>
-      </div>
-      <ToDoList title={allTodos.length? 'Список дел' : 'Дел нет'} todos={appendedTodos} removeTodo={removeTodo}/>
+      <MyHeader 
+        newTodo={newTodo} 
+        setNewTodo={setNewTodo} 
+        addTodo={addTodo}
+        whatShow={whatShow}
+        showTodos={showTodos}
+        
+      />
+      <ToDoList 
+        title={appendedTodos.length? 'Список дел' : 'Дел нет'} 
+        todos={appendedTodos} 
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }

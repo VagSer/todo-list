@@ -7,9 +7,6 @@ function ToDoItem(props) {
     return (
       <div 
         className={(isDone === true)? "Item Done" : "Item"}
-        onClick={() => {
-          setIsDone(!isDone)
-        }}
       >
         <p>{props.todo.text}</p>
         <button
