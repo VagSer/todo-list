@@ -9,11 +9,17 @@ function App() {
   const [allTodos, setAllTodos] = useState([
     {id: 0, text: 'Купить хлеб', isDone: false},
     {id: 1, text: 'Сделать проект', isDone: false},
-    {id: 2, text: 'Сходить в душ', isDone: true}
   ])
 
   const [whatShow, setWhatShow] = useState('all')
   const [appendedTodos, setAppendedTodos] = useState(allTodos)
+
+  useEffect(() => {
+    if (whatShow === 'all') setAppendedTodos(allTodos)
+    else if (whatShow === 'done') {
+      setAppendedTodos(allTodos.filter(todo => todo.isDone === true))
+    } else setAppendedTodos(allTodos.filter(todo => todo.isDone === false))
+  }, [allTodos, whatShow])
 
   const showTodos = (e) => {
     setWhatShow(e.target.value)
@@ -37,8 +43,7 @@ function App() {
   }
 
   const removeTodo = (value) => {
-    setAppendedTodos(allTodos.filter(todo => todo.id !== value.id))
-    setAllTodos(appendedTodos)
+    setAllTodos(allTodos.filter(todo => todo.id !== value.id))
   }
 
   return (
