@@ -3,7 +3,9 @@ import {useState} from 'react';
 import ToDoList from './components/ToDoList';
 
 function App() {
-  const [newTodo, setNewTodo] = useState('')
+  const [newTodo, setNewTodo] = useState({
+    id: Date.now(), text: '', isDone: false
+  })
   const [allTodos, setAllTodos] = useState([
     {id: 0, text: 'Купить хлеб', isDone: false},
     {id: 1, text: 'Сделать проект', isDone: false},
@@ -15,8 +17,8 @@ function App() {
         <h3>ToDo App by VagSer</h3>
         <input
           placeholder='Введите дело'
-          value={newTodo}
-          onChange={(e) => {setNewTodo(e.target.value)}}
+          value={newTodo.text}
+          onChange={(e) => {setNewTodo({...newTodo, text: e.target.value})}}
         />
         <button>
           Добавить
