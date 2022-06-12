@@ -46,6 +46,14 @@ function App() {
     setAllTodos(allTodos.filter(todo => todo.id !== value.id))
   }
 
+  const deleteAllDone = () => {
+    setAllTodos(allTodos.filter(todo => todo.isDone === false))
+  }
+
+  const deleteAllTodos = () => {
+    setAllTodos([])
+  }
+
   return (
     <div className='App'>
       <MyHeader 
@@ -54,7 +62,8 @@ function App() {
         addTodo={addTodo}
         whatShow={whatShow}
         showTodos={showTodos}
-        
+        deleteAllDone={deleteAllDone}
+        deleteAllTodos={deleteAllTodos}
       />
       <ToDoList 
         title={appendedTodos.length? 'Список дел' : 'Дел нет'} 
