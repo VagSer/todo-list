@@ -9,7 +9,21 @@ function App() {
   const [allTodos, setAllTodos] = useState([
     {id: 0, text: 'Купить хлеб', isDone: false},
     {id: 1, text: 'Сделать проект', isDone: false},
+    {id: 2, text: 'Сходить в душ', isDone: true}
   ])
+
+  const addTodo = () => {
+    if (newTodo.text) {
+      setAllTodos([...allTodos, newTodo])
+      setNewTodo({
+        id: Date.now(), text: '', isDone: false
+      })
+    }
+  }
+
+  const removeTodo = (value) => {
+    setAllTodos(allTodos.filter(todo => todo.id !== value.id))
+  }
 
   return (
     <div>
@@ -20,13 +34,13 @@ function App() {
           value={newTodo.text}
           onChange={(e) => {setNewTodo({...newTodo, text: e.target.value})}}
         />
-        <button>
+        <button
+          onClick={addTodo}
+        >
           Добавить
         </button>
       </header>
-      <div>
-        <ToDoList title='Список дел' todos={allTodos}/>
-      </div>
+      <ToDoList title='Список дел' todos={allTodos} removeTodo={removeTodo}/>
     </div>
   );
 }

@@ -3,8 +3,10 @@ import '../style/ToDoItem.css'
 function ToDoItem(props) {
     return (
       <div className="Item">
-        <p>{props.text}</p>
-        <button>Удалить</button>
+        <p>{props.todo.text}</p>
+        <button
+          onClick={() => {props.delete(props.todo)}}
+        >Удалить</button>
       </div>
     );
   }
