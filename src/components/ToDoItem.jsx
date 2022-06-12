@@ -8,7 +8,17 @@ function ToDoItem(props) {
       <div 
         className={(isDone === true)? "Item Done" : "Item"}
       >
-        <p>{props.todo.text}</p>
+        <p>
+          <input
+            type='checkbox'
+            checked = {isDone}
+            onChange = {(e) => {
+              setIsDone(!isDone)
+              props.makeDone(props.todo)
+            }}
+          />
+          {props.todo.text}
+        </p>
         <button
             onClick={() => {
               props.delete(props.todo)

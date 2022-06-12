@@ -23,6 +23,10 @@ function App() {
     } else setAppendedTodos(allTodos.filter(todo => todo.isDone === false))
   }
 
+  const makeDone = (value) => {
+    value.isDone = !value.isDone
+  }
+
   const addTodo = (e) => {
     if (newTodo.text) {
       setAllTodos([...allTodos, newTodo])
@@ -51,6 +55,7 @@ function App() {
         title={appendedTodos.length? 'Список дел' : 'Дел нет'} 
         todos={appendedTodos} 
         removeTodo={removeTodo}
+        makeDone={makeDone}
       />
     </div>
   );
