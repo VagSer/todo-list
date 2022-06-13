@@ -14,16 +14,6 @@ function MyHeader(props) {
                     <option value="done">Сделанные</option>
                     <option value="undone">Несделанные</option>
                 </select>
-                <button
-                    onClick={props.deleteAllDone}
-                    >
-                    Удалить сделанные
-                    </button>
-                <button
-                    onClick={props.deleteAllTodos}
-                    >
-                    Удалить все
-                </button>
             </div>
             <div style={{display: 'flex'}}>
                 <input

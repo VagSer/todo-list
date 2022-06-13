@@ -62,14 +62,14 @@ function App() {
         addTodo={addTodo}
         whatShow={whatShow}
         showTodos={showTodos}
-        deleteAllDone={deleteAllDone}
-        deleteAllTodos={deleteAllTodos}
       />
       <ToDoList 
         title={appendedTodos.length? 'Список дел' : 'Дел нет'} 
         todos={appendedTodos} 
         removeTodo={removeTodo}
         makeDone={makeDone}
+        deleteAllDone={deleteAllDone}
+        deleteAllTodos={deleteAllTodos}
       />
     </div>
   );
