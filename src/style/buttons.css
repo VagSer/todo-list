@@ -1,0 +1,23 @@
+.DeleteButton {
+    background: none;
+    color: darkred;
+    border: 1px solid darkred;
+    transition: 0.3s;
+}
+
+.DeleteButton:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.AddButton {
+    background: none;
+    color: lightblue;
+    border: 1px solid rgb(91, 195, 230);
+    transition: 0.3s;
+}
+
+.AddButton:hover {
+    background-color: rgb(91, 195, 230);
+    color: white;
+}

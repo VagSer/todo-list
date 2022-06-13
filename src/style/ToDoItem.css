@@ -1,6 +1,6 @@
 .Item {
     display: flex;
-    border: 1px solid black;
+    box-shadow: 0px 9px 20px black;
     justify-content: space-between;
     width: 90%;
     max-width: 800px;

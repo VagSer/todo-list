@@ -1,4 +1,5 @@
 import '../style/MyHeader.css'
+import '../style/buttons.css'
 
 function MyHeader(props) {
     return(
@@ -22,6 +23,7 @@ function MyHeader(props) {
                 onChange={(e) => {props.setNewTodo({...props.newTodo, text: e.target.value})}}
                 />
                 <button
+                className='AddButton'
                 onClick={props.addTodo}
                 >
                 Добавить

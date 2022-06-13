@@ -1,4 +1,5 @@
 import '../style/ToDoItem.css'
+import '../style/buttons.css'
 import {useState} from 'react'
 
 function ToDoItem(props) {
@@ -20,6 +21,7 @@ function ToDoItem(props) {
           {props.todo.text}
         </p>
         <button
+            className='DeleteButton'
             onClick={() => {
               props.delete(props.todo)
             }}

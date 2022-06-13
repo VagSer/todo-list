@@ -1,5 +1,6 @@
 import ToDoItem from "./ToDoItem";
 import '../style/ToDoList.css'
+import '../style/buttons.css'
 
 
 function ToDoList(props) {
@@ -7,11 +8,13 @@ function ToDoList(props) {
       <div className="ToDoList">
         <div style={{display: 'flex', justifyContent: "space-between", margin: '10px'}}>
           <button
+            className="DeleteButton"
             onClick={props.deleteAllDone}
           >Удалить сделанные
           </button>
           <h2 >{props.title}</h2>
           <button
+            className="DeleteButton"
             onClick={props.deleteAllTodos}
           >Удалить все</button>
         </div>
