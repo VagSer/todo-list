@@ -7,8 +7,7 @@ function App() {
     id: Date.now(), text: '', isDone: false
   })
   const [allTodos, setAllTodos] = useState([
-    {id: 0, text: 'Купить хлеб', isDone: false},
-    {id: 1, text: 'Сделать проект', isDone: false},
+
   ])
 
   const [whatShow, setWhatShow] = useState('all')
